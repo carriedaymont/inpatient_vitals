@@ -16,18 +16,17 @@ These .csv files are lookup tables for reference values from the Bonafide 2013 p
 <br />
 
 
-##### inpt_hrz_temp_zscores
-This .csv file is a lookup table for reference values for HR for age and body temperature from the Daymont 2015 paper. It contains 5 columns described below. It is a large file (72.2 MB) -- if you have trouble using this large file, another option for calculating z-scores for age and temp is provided below.
+##### inpt_hrz_temp_zscores and inpt_hrz_temp_percentiles
+These compressed .csv files are lookup tables for reference values for HR for age and body temperature from the Daymont 2015 paper. It contains 5 columns described below. They are relatively large files when uncompressed (about 50 MB). If you have trouble using these, another option to calculate these z-scores is below.
 1. months: An integer, the last completed month of age, as for the inpt_hr_zscores file above.
 2. hr: The vital sign value as an integer. For this file the HR ranges from 40-240 for 0 to <2yo and 40-200 for 2 to <18yo.
 3. temp: Body temperature in Celsius to the nearest 0.1 degree, ranges from 35 to 40.5.
-4. hrz_t: HR for age and body temperature z-score.
-5. hrz_p: HR for age and body temperature percentile. As for hrp above, this percentile ranges from 0 to just under 100, so a value of 0.1 refers to the 0.1st percentile, not the 10th percentile.
+4. hrz_t or hrp_t: hrp_t is the HR for age and body temperature z-score, and hrz_p is the HR for age and body temperature percentile. As for hrp above, hrp_t ranges from 0 to just under 100, so a value of 0.1 refers to the 0.1st percentile, not the 10th percentile.
 <br />
 
 
 ###### inpt_hr_temp_lms
-This file and instructions only need to be used used if the inpt_hrz_temp_zscores file above cannot be used because of size. 
+This file and instructions only need to be used used if the inpt_hrz_temp_zscores or inpt_hrz_temp_percentiles above cannot be used because of size. 
 This .csv file contains the values needed to calculate HR-for-age-and-temp z-scores. Use of this file requires a few steps (described below). It contains 4 columns:
 1. temp: Body temperature in Celsius to the nearest 0.1 degree, ranges from 35 to 40.5.
 2. l: L, M, and S are the parameters describing the distribution of HR-for-age at a given body temperature. They are typically capitalized but the column names are lowercase.
